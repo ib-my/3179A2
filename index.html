@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+<!-- CSS file -->
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+<title>FIT3179 Data Visualisation 2</title>
+</head>
+<body>
+  <div class="page">
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1>Driving Sustainability: Environmental Protection in Malaysia</h1>
+    </div>
+  </div>
+      <div class="container-norm">
+          <div id="choropleth"></div>
+          <script type="text/javascript">
+              var vg_1 = "choropleth.vg.json";
+              vegaEmbed("#choropleth", vg_1).then(function(result) {
+                  // Access the Vega view instance
+              }).catch(console.error);
+          </script>
+      </div>
+      <div class="container">
+      <div class="section-1-1">
+      <div class="intro-text">
+        <p>With its diverse geography, Malaysia is tasked with addressing <strong>unique environmental concerns</strong> while balancing <strong>economic growth</strong>.</p>
+    </div>
+  </div>
+  <div class="section-1-2">
+    <div class="intro-text">
+      <p>Over recent years, government bodies have ramped up their <strong>funding</strong> and <strong>initiatives</strong> to address everything from <strong>biodiversity protection</strong> to <strong>pollution management</strong>.</p>
+  </div>  
+</div>
+</div>
+<h2>Breakdown of Expenditure on Environmental Protection by State</h2>
+
+  <div class="container-norm">
+          <div id="stackedbar"></div>
+          <script type="text/javascript">
+              var vg_4 = "stackedbar.vg.json";
+              vegaEmbed("#stackedbar", vg_4).then(function(result) {
+                  // Access the Vega view instance
+              }).catch(console.error);
+          </script>
+      </div>
+      <div class="container">
+        <div class="section-1-1">
+        <div class="intro-text">
+          <p><strong>Malaysia's commitment</strong> to funding environmental protection remains strong as efforts are highly focused on <strong>waste</strong> and <strong>pollution management</strong>.</p>
+      </div>
+    </div>
+    <div class="section-1-2">
+      <div class="intro-text">
+        <p>While progress has been made, the future of our environment relies on <strong>continued focus</strong> and strategic investment in <strong>diversified sustainability efforts</strong>.</p>
+    </div>  
+  </div>
+  </div>
+
+
+
+    <h2>CO2 emissions per Capita of Selected ASEAN Countries</h2>
+    <div class="container-norm">
+      <div id="normstackedarea"></div>
+    <script type="text/javascript">
+        var vg_3 = "stackedarea.vg.json";
+        vegaEmbed("#normstackedarea", vg_3).then(function(result) {
+            // Access the Vega view instance
+        }).catch(console.error);
+    </script>
+      </div>
+
+      <div class="container">
+        <div class="section-1-1">
+        <div class="intro-text">
+          <p>The <strong>ASEAN region</strong> faces the dual challenge of fostering <strong>economic growth</strong> while minimising its <strong>environmental impact</strong>.</p>
+      </div>
+    </div>
+    <div class="section-1-2">
+      <div class="intro-text">
+        <p>As the region progresses, understanding the dynamics of <strong>carbon output</strong> will be crucial to shaping a <strong>sustainable</strong> and <strong>equitable</strong> future for all.</p>
+    </div>  
+  </div>
+  </div>
+
+    <h2>Distribution of Malaysia GHG Emissions with Total Net Emissions</h2>
+
+
+<div class="container-norm">
+  <div id="stackbarline"></div>
+  <script type="text/javascript">
+      var vg_5 = "stackbarline.vg.json";
+      vegaEmbed("#stackbarline", vg_5).then(function(result) {
+          // Access the Vega view instance
+      }).catch(console.error);
+  </script>
+  <div class="container-anno"><d><bold>Note:</bold> IPPU - Industrial Processes and Product Use; LULUCF - Land Use, Land Use Change and Forestry.</d></div>
+  
+    </div>
+    <div class="container">
+      <div class="section-1-1">
+      <div class="intro-text">
+        <p>
+          Malaysia's GHG emissions reflect the country's <strong>evolving industrial</strong> and <strong>environmental landscape </strong> over the years.</p>
+    </div>
+  </div>
+  <div class="section-1-2">
+    <div class="intro-text">
+      <p>Significant <strong>policy</strong> and <strong>economic decisions</strong> have shaped the trends seen in its emissions profile.</p>
+  </div>  
+</div>
+</div>
+
+<h2>Energy Source Distribution in Selected ASEAN Countries</h2>
+      <div class="container-norm">
+        <div id="repeatbar"></div>
+            <script type="text/javascript">
+                var vg_6 = "repeatbar.vg.json";
+                vegaEmbed("#repeatbar", vg_6).then(function(result) {
+                    // Access the Vega view instance
+                }).catch(console.error);
+            </script>
+            </div>
+
+            <div class="container">
+              <div class="section-1-1">
+              <div class="intro-text">
+                <p><strong>Malaysia</strong> has a <strong>higher dependence</strong> on <strong>fossil fuels</strong> than its ASEAN peers. Shifts in <strong>energy policies</strong> like the Corporate Renewable Energy Supply Scheme (CRESS) influence the energy mix.</p>
+            </div>
+          </div>
+          <div class="section-1-2">
+            <div class="intro-text">
+              <p>There are ongoing <strong>transitions</strong> shaped by energy demands and regional efforts to <strong>enhance sustainability</strong> while ensuring economic growth.</p>
+          </div>  
+        </div>
+        </div>
+      
+<div class="container-last">
+  <div class="last-text">
+    <f>Visualisation designed by <strong>Muhammad Ibrahim bin Mohd Yusni</strong></f>.<br>
+
+    <f><strong>Dated</strong> 17 October 2024.</f><br><br>
+    <f><strong>Data provided by:</strong></f><br>
+    <fi>Department of Statistics Malaysia (2023) - <a href="https://www.dosm.gov.my/portal-main/release-document-log?release_document_id=7110">Link</a></fi><br>
+    <fi>Global Carbon Budget (2023) - <a href="https://ourworldindata.org/grapher/co-emissions-per-capita?tab=chart&time=2000..2021&showSelectionOnlyInTable=1&country=MYS~BRN~SGP~IDN~VNM~THA">Link</a></fi><br>
+    <fi>Ministry Of Natural Resources, Environment and Climate Change Malaysia(2022) (pp.186-201) - <a href="https://unfccc.int/sites/default/files/resource/MY%20BUR4_2022.pdf">Link</a></fi><br>
+    <fi>Energy Institute - Statistical Review of World Energy (2024) - <a href="https://ourworldindata.org/grapher/energy-consumption-by-source-and-country?stackMode=absolute&facet=entity&country=MYS~IDN~SGP~THA~VNM">Link</a></fi>
+  </div>
+</div>
+      
+</div>
+</body>
+</html>

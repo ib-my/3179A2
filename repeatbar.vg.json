@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "energy_share_old.csv"
+    },
+    "transform": [
+      {
+        "fold": ["Coal", "Oil", "Natural gas", "Renewables, waste and others"],
+        "as": ["Energy Source", "Percentage"]
+      }
+    ],
+    "facet": {
+      "column": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": null
+      }
+    },
+    "spec": {
+      "width": 271.8,
+    "height": 200,
+      "mark": "bar",
+      "params": [{
+    "name": "sources",
+    "select": {"type": "point", "fields": ["Energy Source"]},
+    "bind": "legend"
+  }],
+      "encoding": {
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "title": "Country"
+        },
+        "x": {
+          "field": "Percentage",
+          "type": "quantitative",
+          "title": "Share of total energy supply (%)", "scale": {"domain": [0,100]}
+        },
+        "color": {
+          "field": "Energy Source",
+          "type": "nominal",
+          "scale": {
+            "range": ["#7e84fa","#0fb5ae",  "#024caa", "#bebebe"]
+          },
+          "title": "Select a Energy Source", "legend":{
+            "labelFontSize": 13,
+    "titleFontSize": 14,
+    "labelLimit":200
+          }
+        },"opacity": {
+      "condition": {"param": "sources", "value": 1},
+      "value": 0.2
+    },
+        "tooltip":[
+            {
+                "field": "Year",
+                "type": "ordinal",
+                "title": "Year"
+            },
+            {
+                "field": "Country",
+                "type": "nominal",
+                "title": "Country"
+              },
+              {
+                "field": "Energy Source",
+                "type": "nominal",
+                "title": "Energy Source"
+              },
+              {
+                "field": "Percentage",
+                "type": "quantitative",
+                "title": "% Share of Energy Supply",
+                "format": ".1f",
+                "formatType": "number"
+              }
+        ]
+      }
+    },
+    "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "font": "roboto"
+  
+  }
+  }

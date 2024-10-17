@@ -1,0 +1,190 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 965,
+    "height": 400,
+    "data": {
+      "url": "ghg_old.csv"
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "bar",
+          "size": 35,
+          "cornerRadiusTopLeft": 3,
+          "cornerRadiusTopRight": 3,
+          "cornerRadiusBottomLeft": 3,
+          "cornerRadiusBottomRight": 3
+        },
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "title": null,
+            "type": "ordinal",
+            "axis": {
+              "labelAngle": 0
+            }
+          },
+          "y": {
+            "aggregate": "sum",
+            "field": "value",
+            "type": "quantitative",
+            "title": "GHG Emissions (Tg CO2 equivalent)",
+            "stack": "zero",
+            "sort": ["LULUCF", "Energy", "IPPU", "Agriculture", "Waste"]
+          },
+          "color": {
+            "field": "category",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Waste", "Agriculture", "IPPU", "Energy", "LULUCF"],
+              "range": ["#909090", "#AAA7AD", "#f68511", "#de3d82", "#4046ca"]
+            },
+            "title": "Category"
+          },
+          "order": {
+            "aggregate": "sum"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "ordinal",
+              "title": "Year"
+            },
+            {
+              "field": "category",
+              "type": "nominal",
+              "title": "Category"
+            },
+            {
+              "field": "value",
+              "type": "quantitative",
+              "title": "Emissions (Tg CO2e)",
+              "format": ".2f"
+            }
+          ]
+        },
+        "transform": [
+          {
+            "fold": ["Energy", "IPPU", "Agriculture", "Waste", "LULUCF"],
+            "as": ["category", "value"]
+          }
+        ]
+      },
+      {
+        "transform": [
+          {
+            "fold": ["Total Net Emissions"],
+            "as": ["emissions", "values_emis"]
+          }
+        ],
+        "mark": {
+          "type": "line",
+          "color": "black",
+          "strokeWidth": 2
+        },
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "ordinal"
+          },
+          "y": {
+            "field": "Total Net Emissions",
+            "type": "quantitative",
+            "title": "GHG Emissions (Tg CO2 equivalent)"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "ordinal",
+              "title": "Year"
+            },
+            {
+              "field": "Total Net Emissions",
+              "type": "quantitative",
+              "title": "Total Net Emissions (Tg CO2e)",
+              "format": ".2f"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "color": "#000000",
+          "filled": true,
+          "size": 50
+        },
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "ordinal"
+          },
+          "y": {
+            "field": "Total Net Emissions",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "ordinal",
+              "title": "Year"
+            },
+            {
+              "field": "Total Net Emissions",
+              "type": "quantitative",
+              "title": "Total Net Emissions",
+              "format": ".2f"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 18,
+          "dy": 0,
+          "fontSize": 16,
+          "fontWeight": "bold"
+        },
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "ordinal"
+          },
+          "y": {
+            "field": "Total Net Emissions",
+            "type": "quantitative"
+          },
+          "text": {
+            "value": "Total Net Emissions"
+          },
+          "tooltip": [
+            {
+              "field": "Year",
+              "type": "ordinal",
+              "title": "Year"
+            },
+            {
+              "field": "Total Net Emissions",
+              "type": "quantitative",
+              "title": "Total Net Emissions (Tg CO2e)",
+              "format": ".2f"
+            }
+          ]
+        },
+        "transform": [
+          {
+            "filter": "datum.Year == '2019'"
+          }
+        ]
+      }
+    ],
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      },
+      "font": "roboto"
+    }
+  }
+    
