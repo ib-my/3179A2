@@ -38,8 +38,9 @@
             "scale": {
               "domain": ["Waste", "Agriculture", "IPPU", "Energy", "LULUCF"],
               "range": ["#909090", "#AAA7AD", "#f68511", "#de3d82", "#4046ca"]
-            },
-            "title": "Category"
+            },"legend":{  "title": "Category", "labelFontSize": 13,
+    "titleFontSize": 14}
+
           },
           "order": {
             "aggregate": "sum"
